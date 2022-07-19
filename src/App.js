@@ -21,10 +21,10 @@ function App() {
   const [airtBrochureURL, setAirtBrochureURL] = useState('');
 
   useEffect(() => {
-    getBackgroundVideoURL(setAirtBgVideoURL);
-    getButtonURLs(setAirtButtons);
-    getUniversityList(setAirtUniversityList);
-    getBrochureURL(setAirtBrochureURL);
+    // getBackgroundVideoURL(setAirtBgVideoURL);
+    // getButtonURLs(setAirtButtons);
+    //getUniversityList(setAirtUniversityList);
+    // getBrochureURL(setAirtBrochureURL);
     // eslint-disable-next-line
   }, []);
 
