@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import {
   getBrochureURL,
   getBackgroundVideoURL,
   getButtonURLs,
   getUniversityList,
 } from './util/airtable';
+import { Home, NotFound } from './pages';
 
 function App() {
   // Airtable's Data
@@ -31,7 +33,16 @@ function App() {
     airtBrochureURL,
   };
 
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home data={data} />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
