@@ -1,5 +1,10 @@
 import React from 'react';
 
 export default function Home({ data }) {
-  return <div>Home</div>;
+  return <div></div>;
 }
+
+/**
+ * normal normal
+ * italic normal
+ */

@@ -7,6 +7,8 @@ import {
   getUniversityList,
 } from './util/airtable';
 import { Home, NotFound } from './pages';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyles, themes } from './style';
 
 function App() {
   // Airtable's Data
@@ -35,12 +37,16 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<Home data={data} />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <GlobalStyles />
+      <ThemeProvider theme={themes.emprendedores}>
+        <BrowserRouter>
+          <h1>Haallo</h1>
+          <Routes>
+            <Route index element={<Home data={data} />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
     </div>
   );
 }
